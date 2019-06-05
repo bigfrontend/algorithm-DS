@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    /**
+     *  插入排序
+     */
+    function insertSort(arr = [2, 3, 1, 5, 4]) {
+        for (let i = 1; i < arr.length; i++) {  // 从第二个元素开始
+            let j = i
+            while (arr[j] < arr[j - 1]) {   // 升序排
+                let temp = arr[j]
+                arr[j-1] = temp
+                arr[j] = arr[j-1]
+                j--
+            }
+        }
+    }
+
+</script>
+</body>
+</html>
