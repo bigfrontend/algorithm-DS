@@ -4,6 +4,7 @@
 
 1.好的学习资料  
   https://github.com/MisterBooo/LeetCodeAnimation
+  https://30secondsofcode.org/#top
 
 
 2.好的学习方法  

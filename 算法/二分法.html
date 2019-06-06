@@ -11,12 +11,52 @@
     /**
      *   二分法: 递归实现  非递归实现
      *
-     *   思想：分而治之
+     *   Master定理T(n)=T(n/2)+O(1)所以T(n)=O(log2n)    S(n)=logn
+     *
+     *   思想：
      *
      *   前提：有序数组
      */
 
 
+    /**
+     *  循环实现
+     * @param arr
+     * @param target
+     * @returns {number}
+     */
+    function binSearch(arr, target) {
+        let beginIndex = 0, midIndex, endIndex = arr.length - 1
+        while (beginIndex < endIndex) {
+            midIndex = Math.floor((beginIndex + endIndex) / 2)
+            if (target === arr[midIndex]) {
+                return midIndex
+            } else if (target > arr[midIndex]) {
+                beginIndex = midIndex + 1
+            } else {
+                endIndex = midIndex - 1
+            }
+        }
+        return -1    // 没找到 
+    }
+
+    /**
+     *  递归实现         除以2会不会漏掉？
+     */
+    function binarySearch(arr, beginIndex, endIndex, target) {
+        debugger
+        if (beginIndex > endIndex) return -1
+        let mid = Math.floor((beginIndex + endIndex) / 2)
+        if (target === arr[mid]) {
+            return mid
+        } else if (target < arr[mid]) {
+            endIndex = mid - 1
+            return binarySearch(arr, beginIndex, endIndex, target)
+        } else {
+            beginIndex = mid + 1
+            return binarySearch(arr, beginIndex, endIndex, target)
+        }
+    }
 
 
 
